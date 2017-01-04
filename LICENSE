@@ -1,9 +1,13 @@
-All source code in this repository is licensed under MIT license except
-the CImg Library which is licensed under the CeCILL-C license.
+All source code in this repository is licensed under MIT license except:
+* the CImg Library which is licensed under the CeCILL-C license.
+* FreeGLUT binaries and code are licensed under the FreeGLUT license ("freeglut license.txt"). Source is available at http://freeglut.sourceforge.net/
+* GLUI binaries and code are licensed under the ZLIB License ("GLUI License.txt"). Source is available at http://glui.sourceforge.net/
+* GLEW binaries and code are licensed under the license in "GLEW License.txt"
+* I am shamelessly redistributing helper_math.h from the CUDA Development Toolkit samples common includes. Download the full SDK from https://developer.nvidia.com/cuda-downloads
 
 The MIT License (MIT)
 
-Copyright (c) 2015-2016 Duane Storti and Mete Yurtoglu
+Copyright (c) 2015-2016 Duane Storti and Mete Yurtoglu, with modifications by Ben Weiss
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
