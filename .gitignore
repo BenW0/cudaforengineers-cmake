@@ -356,6 +356,7 @@ Temporary Items
 !libs/glew/bin
 !libs/glew/bin/Release
 !libs/glew/bin/Release/Win32/*.dll
+!libs/glew/bin/Release/x64
 !libs/glew/bin/Release/x64/*.dll
 !libs/glew/lib/Release
 !libs/glew/lib/Release/Win32
