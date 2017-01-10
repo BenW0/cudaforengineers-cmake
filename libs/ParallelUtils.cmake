@@ -109,7 +109,9 @@ macro(enable_cuda_support)
 		
 		# We need to set CUDA_SEPARABLE_COMPILATION or else header files with device code break the build (Ben)
 		set(CUDA_SEPARABLE_COMPILATION TRUE CACHE BOOL "Compile objects with separable compilation enabled. Requires CUDA 5.0+")
-
+		
+		# Also enable device debugging when in debug builds
+		set(CUDA_NVCC_FLAGS_DEBUG "--device-debug" CACHE STRING "Extra switches to nvcc for debug mode.")
 
     # Let's get going...
     find_package("CUDA" REQUIRED)
