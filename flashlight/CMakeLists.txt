@@ -25,7 +25,7 @@
 ##########################################################
 
 # Minimum version of CMake required.
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 2.8)
 
 # Set the name of your project. Change the next two lines to match your current project name.
 project(flashlight)
@@ -78,7 +78,9 @@ file(GLOB SOURCES
 cuda_add_executable(${EXE_NAME} ${SOURCES})
 
 # Set the startup project for Visual Studio
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${EXE_NAME})
+if(NOT CMAKE_VERSION VERSION_LESS "3.6.0")
+  set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${EXE_NAME})
+endif()
 
 # link with shared common headers
 cuda_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
