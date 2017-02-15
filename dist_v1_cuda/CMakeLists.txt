@@ -70,19 +70,3 @@ endif()
 # link with shared common headers
 cuda_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
-
-# Copy the dynamic libraries to the compilation folder as a post-build step (Windows-only in case we are using local libraries)
-if(WIN32)
-	if(DEFINED GLUT_RUNTIME_LIBRARY)
-		add_custom_command(TARGET ${EXE_NAME} POST_BUILD
-				COMMAND ${CMAKE_COMMAND} -E copy_if_different
-					"${GLUT_RUNTIME_LIBRARY}"
-					"\"\$\(OutDir\)/\"")
-	endif()
-	if(DEFINED GLEW_RUNTIME_LIBRARY)
-		add_custom_command(TARGET ${EXE_NAME} POST_BUILD
-				COMMAND ${CMAKE_COMMAND} -E copy_if_different
-					"${GLEW_RUNTIME_LIBRARY}"
-					"\"\$\(OutDir\)/\"")
-	endif()
-endif()
